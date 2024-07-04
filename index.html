@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- sender 2.1-->
+    <title> Sender-ERC20 Token Multi Sender.Packer your multi transfer in one transaction and save your cost.Ethereum,Binance,Polygon...</title>
+
+    <style type="text/css">
+        .avatar.avatar-online:after {
+            background-color: #71dd37;
+        }
+        .avatar {
+            position: relative;
+            width: 2.375rem;
+            height: 2.375rem;
+            cursor: pointer;
+        }
+        .rightIcon {
+            width: 30px;
+        }
+        #loader1 {
+            width: 200px;
+            display: none;
+        }
+        #loader2 {
+            width: 200px;
+            display: none;
+        }
+        .bg-nav-white {
+            background-color: #ffffff33 !important;
+        }
+        .Gradient-Background {
+            background: linear-gradient(to left top, rgb(249, 168, 212), rgb(216, 180, 254), rgb(129, 140, 248));
+            color: #fff;
+        }
+        .btn-success {
+            background-color: #7cffcb;
+            background-image: linear-gradient(to right, rgba(55, 236, 186, 1), rgba(114, 175, 211, 1));
+        }
+        .btn-info {
+            background-color: #eec0c6;
+            background-image: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+        }
+        .btn-secondary {
+            background-color: #7f5a83;
+            background-image: linear-gradient(to right, rgba(106, 133, 182, 1), rgba(186, 200, 224, 1));
+        }
+        .btn-primary {
+            background-color: #2a2a72;
+            background-image: linear-gradient(to right, rgba(85, 221, 94, 1), rgba(102, 166, 255, 1));
+        }
+        .btn-warning {
+            background-color: #f8ceec;
+            background-image: linear-gradient(to right, rgba(94, 231, 223, 1), rgba(180, 144, 202, 1));
+        }
+        .btn- {
+            background-color: #b1bfd8;
+            background-image: linear-gradient(315deg, #b1bfd8 0%, #6782b4 74%);
+        }
+        .btn-light {
+            background-color: #42378f;
+            background-image: linear-gradient(315deg, #758283 0%, #CAD5E2 74%);
+        }
+        .btn-danger {
+            background-color: #2a2a72;
+            background-image: (to right, rgba(166, 192, 254, 1), rgba(246, 128, 132, 1));
+        }
+        .btn-dark {
+            background-color: #2a2a72;
+            background-image: (to right, rgba(196, 113, 245, 1), rgba(250, 113, 205, 1));
+        }
+        button {
+            outline: none;
+            border: 0px;
+            border-radius: 40px;
+            margin: 10px;
+            cursor: pointer;
+            color: #fff;
+            background-size: 280% 180%;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+            transition: all .4s ease-in-out;
+            border: 0px !important;
+        }
+        button:hover {
+            background-position: 90% 0;
+            transition: all .2s ease-in-out;
+        }
+    </style>
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+
+<!--********************Nav Bar******************************-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent">
+    <!-- <a class="navbar-brand" href="#">Navbar</a>-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+<!--********************Nav Bar******************************-->
+
+<body id="page-top" class="text-secondary font-weight-light Gradient-Background">
+    <!-- Page Wrapper -->
+    <div id=" ">
+        <!-- Sidebar -->
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light rounded  bg-nav-white topbar m-3 static-top shadow">
+                    <div><img src="img/USDT.png" width="33" height="33"> <b class="m-1 text-dark">Sender-ERC20 </b></div>
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- Topbar Search -->
+                    <!-- <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form> -->
+
+                    <!-- Topbar Navbar ml-auto-->
+                    <ul class="navbar-nav ml-auto">
+                        <li class=" my-auto mx-2 shadow ">
+                            <select class="custom-select " id="SelectOptionID" onchange="SelectOptionChange( )">
+                                <option value="1" class="lang" key="Ethereum">Ethereum</option>
+                                <option value="56" class="lang" key="Binance">Binance</option>
+                                <!-- <option value="128" class="lang" key="Huobi">Huobi</option>  -->
+                                <option value="137">Polygon </option>
+                                <!-- <option value="250">Fantom</option>  -->
+                                <!-- <option value="43114">Avalanche</option>   -->
+                                <!-- <option value="25">Cronos</option>   -->
+                                <!-- <option value="1284">Moonbeam</option>   -->
+                                <!-- <option value="1285">Moonriver</option>   -->
+                                <!-- <option value="13381">Phoenix</option>   -->
+                                <!-- <option value="534">Candle</option>   -->
+                                <option value="5">Goerli Eth</option>  
+                            </select>
+
+                        </li>
+
+                        <!-- <option value="3" >Ropsten Testnet Chain</option>-->
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) 
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            -->
+                        <!-- Dropdown - Messages -->
+                        <!--
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                    -->
+                        <!-- Nav Item - Alerts 
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                -->
+                        <!-- Counter - Alerts -->
+                        <!--
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>-->
+                        <!-- Dropdown - Alerts 
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+-->
+                        <!-- Nav Item - Messages 
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                -->
+                        <!-- Counter - Messages 
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>-->
+                        <!-- Dropdown - Messages 
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Message Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                            problem I've been having.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                            alt="...">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how
+                                            would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                            alt="...">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                            the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                            told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            </div>
+                        </li>
+-->
+
+                        <!--
+<button id="en" class="translate">English</button>
+<button id="zh" class="translate">简体中文</button>
+<button id="ru" class="translate">русский</button> 
+<button id="kr" class="translate">한국어</button> 
+<button id="fa" class="translate">فارسی</button> 
+<button id="jp" class="translate">日本語</button> 
+<button id="th" class="translate">ไทย</button> 
+                            -->
+
+                        <!-- language -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="img-profile rounded-circle" src="img/lang.png">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a id="en" class="dropdown-item translate" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    English
+                                </a>
+                                <a id="zh" class="dropdown-item translate" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400 translate"></i>
+                                    简体中文
+                                </a>
+                                <a id="ru" class="dropdown-item translate" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400 translate"></i>
+                                    русский
+                                </a>
+                                <a id="kr" class="dropdown-item translate" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400 translate"></i>
+                                    한국어
+                                </a>
+                                <!--     <div class="dropdown-divider"></div>-->
+                            </div>
+                        </li>
+                        <!-- language -->
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id='CurrentAddress' class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                                <img class="img-profile rounded-circle" src="img/metamask.png">
+                            </a>
+                            <!-- Dropdown - User Information
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                             -->
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid d-flex justify-content-center">
+
+                    <!-- Page Heading 
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+-->
+                    <!-- Content Row -->
+                    <div class="row">
+                        <!-- Earnings (Monthly) Card Example
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Earnings (Monthly)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- Earnings (Monthly) Card Example 
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Earnings (Annual)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+-->
+                        <!-- Earnings (Monthly) Card Example
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+-->
+                        <!-- Pending Requests Card Example -->
+                        <!-- <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Pending Requests</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+                        <!-- Area Chart -->
+                    </div>
+                    <!-- Content Row -->
+                    <div class="row m-5 w-50">
+                        <!-- Content Column -->
+                        <div class="col-lg-12 mb-4">
+                            <!-- Illustrations -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary lang" key="Token MultiSender">Token MultiSender</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-center  ">
+                                        <img src="img/USDT.png" width="33" height="33">
+                                    </div>
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Token Sender</h1>
+                                    </div>
+                                    <div class="text-center">
+                                        <h1 class="h6 text-gray-900 mb-4 lang" key="SiteTitle">Pack and send Multi transfer in one Transaction</h1>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            
+                                            <!-- <select class="custom-select w-25" id="SelectISend" onchange="ISendChange( )">
+                                                <option value="1"  class="lang" key="Ethereum">Ethereum</option>
+                                                <option value="5" >Goerli Testnet Chain</option> 
+                                                <option value="56"  class="lang" key="Binance">Binance</option>
+                                                <option value="128" class="lang" key="Huobi">Huobi</option> 
+                                                <option value="137">Polygon </option> 
+                                                <option value="250">Fantom</option> 
+                                                <option value="43114">Avalanche</option>  
+                                                <option value="25">Cronos</option>  
+                                                <option value="13381">Phoenix</option>  
+                                                <option value="534">Candle</option>  
+                                            </select> -->
+                                           
+
+                                            <!-- language -->
+                                            <ul class="navbar-nav ml-auto  ">
+                                                <li class="nav-item dropdown no-arrow d-flex justify-content-center  ">
+                                                    <a class="nav-link dropdown-toggle " href="#" id="userDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="true">
+
+                                                        <img width="60" height="60" id="CurrentBlockchainImageID"
+                                                            class="img-profile rounded-circle shadow" src="img/1.png">
+                                                    </a>
+
+
+                                                    <div id="ChooseBlockchainDIVid"
+                                                        class="dropdown-menu dropdown-menu-center  "
+                                                        aria-labelledby="userDropdown"
+                                                        style="position: absolute; transform: translate3d(326px, 66px, 0px); top: 0px; left: 0px; will-change: transform;"
+                                                        x-placement="bottom-start">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <!-- language -->
+
+                                            <br>
+                                            <div class="text-muted " id="BlockchainNameID"> </div>
+                                            <div><small class="text-muted" id="SendFeeText"> </small></div>
+
+                                            <!--
+                                            <div class="small mb-1">Choose your Blockchain:</div>
+                                            <div class="dropdown mb-4">
+                                                <button class="btn btn-primary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    Binance
+                                                </button>
+                                                <div class="dropdown-menu animated--fade-in"
+                                                    aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">Binance</a>
+                                                    <a class="dropdown-item" href="#">Huobi</a>
+                                                    <a class="dropdown-item" href="#">Polygon</a>
+                                                </div>
+                                            </div>
+                                            -->
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <form>
+                                        <div class="form-group">
+                                            <div class="radio-buttons-choice d-flex flex-row m-2" id="">
+                                                <div class="m-2">
+                                                    <input type="radio" name="SendToken" id="SendTokenRadioID" onclick="SendEtherOrToken(name)">
+                                                    <label class="lang " key="Send Token">Batch Send Token</label><br>
+                                                </div>
+                                                <div class="m-2">
+                                                    <input type="radio" name="SendEther" id="SendEtherRadioID" onclick="SendEtherOrToken(name)">
+                                                    <label id="SendEtherTitleID" class="lang" key="Batch Send ETH">Batch Send ETH</label>
+                                                </div>
+                                            </div>
+                                            <div id="TokenInfoDiv" class="m-2">
+                                                <div class="text-xs font-weight-bold text-primary mb-1 lang" key="Token Address">Token Address</div>
+                                                <input class="form-control form-control-user" type="text" id="TokenAddress" oninput="ActiveTokenContract()" aria-describedby="emailHelp" placeholder="for example:0x122..aef">
+                                                <small id="balanceOf" class="text-muted"></small>
+                                                <br>
+                                            </div>
+                                        </div>
+                                        <div class="radio-buttons-choice m-1" id="AddressAndAmount">
+                                            <input type="radio" name="SameAmount" id="SendSameAmountRadio" onclick="SendType(name)">
+                                            <!--<img src='img/high.png' width="33" height="33"  > -->
+                                            <label class="lang m-1" key="Send same amount to each address">Send same amount to each address</label><br>
+                                            <input type="radio" name="UploadCSV" id="SendDiffAmountRadio" onclick="SendType(name)">
+                                            <!--<img src='img/low.png' width="33" height="33"  > -->
+                                            <label class="lang m-1" key="Use CSV file">Use CSV file</label>
+                                        </div>
+
+                                        <div class=" m-2" id="SendSameAmountDiv">
+                                            <div class="form-group">
+                                                <div class="text-xs font-weight-bold text-primary mb-1 lang" key="Send amount">Send amount</div>
+                                                <input class="form-control form-control-user" type="text" id="MultiSendAmount" placeholder="Send Amount per Address:1.01,5,30....">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="text-xs font-weight-bold text-primary mb-1 lang" key="Address list(1-500 addresses)"> Address list(1-500 addresses)</div>
+                                                <textarea id="AddressArea" class="form-control" placeholder="Address per line. " rows="10"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div id="SendDiffAmountDiv">
+                                            <input type="file" id="fileUpload" />
+                                            <a href="example.csv">Download example csv</a>
+                                            <!--
+                                            <input type="button" id="upload" value="Show Content" onclick="Upload()" />
+                                            -->
+                                            <!-- <hr /> -->
+                                        </div>
+                                        <br>
+                                        <!--style="color:white"-->
+                                        <center>
+                                            <img id="loader1" src="loading.gif"></img>
+                                            <img id="loader2" src="loading.gif"></img>
+                                            <!--<div class=text-white-50" id="Tips" ></div>-->
+                                            <div class="card bg-secondary text-white shadow" id="Tips"></div>
+                                            <div id="PriceSuggest"> </div>
+                                        </center>
+                                        <center>
+                                            <div id="transactionHashLabel" class="m-2"></div>
+                                        </center>
+                                        <br>
+                                        <div class="radio-buttons-choice" id="container-3-radio-buttons-choice">
+                                            <input type="radio" name="Medium" id="one-variable-equations" onclick="checkRadio(name)"/>
+                                            <img src='img/high.png' width="33" height="33"/>
+                                            <label class="lang" key="Medium gas fee">Medium gas fee</label><br>
+
+                                            <input type="radio" name="low" id="multiple-variable-equations" onclick="checkRadio(name)"/>
+                                            <img src='img/low.png' width="33" height="33"/>
+                                            <label class="lang" key="Low gas fee">Low gas fee</label>
+                                        </div>
+                                        <center>
+                                            <button id="approveThisButton" onclick="approveThis(contractAdress);return false;" style="display: none;" class="btn btn-primary">Approve</button>
+                                        </center>
+                                        <center>
+                                            <button id="MultiSendButton" type="button" class="btn btn-primary">Multi Send</button>
+                                        </center>
+                                        <br>
+                                        <div id="dvCSV"></div>
+                                    </form>
+                                    <!-- <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on unDraw &rarr;</a>-->
+                                </div>
+                            </div>
+
+                            <!-- Approach 
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
+                                </div>
+                                <div class="card-body">
+                                 <img  src="img/example.png"  >
+                                    <p> </p>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="pt-4 my-md-5 shadow">
+                <div class="container">
+                    <div class="py-5">
+                        <div class="row">
+                            <div class="col-4">
+                                <h5> </h5>
+                                <ul class="nav flex-column">
+                                </ul>
+                            </div>
+                            <div class="col-4">
+                                <h5> </h5>
+                                <ul class="nav flex-column">
+                                </ul>
+                            </div>
+                            <div class="col-4">
+                                <h5> </h5>
+                                <ul class="nav flex-column">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between text-dark py-4 my-4">
+                            <p>© 2023 Dapp, All rights reserved.</p>
+                            <ul class="list-unstyled d-flex">
+                                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+                                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins 
+    <script src="vendor/chart.js/Chart.min.js"></script>
+-->
+    <!-- Page level custom scripts
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+ -->
+
+
+    <script src="js/all.min.js"></script>
+    <script src="js/contract.js"></script>
+    <script src="js/token.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/global.js"></script>
+    <!--https://code.jquery.com/jquery-3.5.1.slim.min.js-->
+    <!--<script src="js/jquery-3.5.1.slim.min.js"    integrity=""></script>-->
+    <script src="js/popper.min.js" integrity=""></script>
+
+    <!--https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js-->
+    <!--<script src="js/bootstrap.min.js"       integrity=""     ></script>-->
+
+
+    <script src='js/bignumber.js'></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/langs.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>-->
+    <script src="js/index.js"></script>
+
+    <script type="text/javascript">
+        // Process translation
+        $(function () {
+            $('.translate').click(function () {
+                var lang = $(this).attr('id');
+                console.log("change language..");
+                $('.lang').each(function (index, item) {
+                    $(this).text(arrLang[lang][$(this).attr('key')]);
+                });
+            });
+        });
+        $(document).ready(async function () {
+            $('#toastButton').click(function () {
+                $('.toast').toast('show');
+            });
+            var isConnection = await CheckMetamaskConnection();
+            if (isConnection) {
+                var _0x2a076c = true;
+                (document.getElementById("one-variable-equations").checked = true),
+                    (document.getElementById('SendSameAmountRadio').checked = true),
+                    (document.getElementById('SendTokenRadioID').checked = true),
+                    await addList(),
+                    $('#SendDiffAmountDiv').hide();
+                var networkId = await web3.eth.net.getId();
+                console.log(networkId);
+                var isSupportNetwork = false;
+                switch (networkId) {
+                    case 1:
+                        console.log("This is mainnet"),
+                            (contractAdress = EthereumContractAddress),
+                            (BlockchainScan = EthereumScan),
+                            (BeeFee = EthereumFee),
+                            (isSupportNetwork = true);
+                        break;
+                    case 2:
+                        console.log('This is the deprecated Morden test network.');
+                        break;
+                    case 3:
+                        console.log("This is the ropsten test network."),
+                            (contractAdress = RopstenAddress),
+                            (BlockchainScan = RopstenScan),
+                            (isSupportNetwork = true),
+                            (BeeFee = RopstenFee);
+                        break;
+                    case 5:
+                        console.log("This is the Goerli test network."),
+                            (contractAdress = GoerliContractAddress),
+                            (BlockchainScan = GoerliETHScan),
+                            (isSupportNetwork = true),
+                            (BeeFee = EthereumFee);
+                        break;
+                    case 25:
+                        console.log('This is the Cronos network.'),
+                            (contractAdress = CronosContractAddress),
+                            (BlockchainScan = CronosScan),
+                            (BeeFee = CronosFee),
+                            (isSupportNetwork = true);
+                        break;
+                    case 42:
+                        console.log("This is the Kovan network."),
+                            (contractAdress = KovanAddress),
+                            (BlockchainScan = KovanScan),
+                            (isSupportNetwork = true),
+                            (BeeFee = RopstenFee);
+                        break;
+                        break;
+                    case 56:
+                        console.log("This is the BSC network."),
+                            (contractAdress = BinanceContractAddress),
+                            (BlockchainScan = BinanceScan),
+                            (isSupportNetwork = true),
+                            (BeeFee = BinanceFee);
+                        break;
+                    case 97:
+                        (contractAdress = BinanceTestContractAddress),
+                            console.log('This is the BSC test network.');
+                        break;
+                    case 108:
+                        console.log("This is the ThunderCore  network.");
+                        break;
+                    case 128:
+                        (contractAdress = HuobiContractAddress),
+                            console.log("This is the huobi  network."),
+                            (BeeFee = HuobiFee),
+                            (isSupportNetwork = true);
+                        break;
+                    case 137:
+                            (contractAdress = PolygonContractAddress),
+                            console.log('This is the Polygon  network.'),
+                            (BlockchainScan = PolygonScan),
+                            (BeeFee = PolygonFee),
+                            (isSupportNetwork = true);
+                        break;
+                    case 250:
+                            (contractAdress = FantomContractAddress),
+                            console.log("This is the Fantom  network."),
+                            (BlockchainScan = FantomScan),
+                            (BeeFee = FantomFee),
+                            (isSupportNetwork = true);
+                        break;
+                    case 1284:
+                        (contractAdress = MoonbeamContractAddress),
+                            console.log('This is the Moonbeam  network.'),
+                            (BlockchainScan = MoonbeamScan),
+                            (BeeFee = MoonbeamFee),
+                            (isSupportNetwork = true);
+                        break;
+                    case 1285:
+                        (contractAdress = MoonriverContractAddress),
+                            console.log('This is the Moonriver  network.'),
+                            (BlockchainScan = MoonriverScan),
+                            (BeeFee = MoonriverFee),
+                            (isSupportNetwork = true);
+                        break;
+                    case 534:
+                        console.log('This is the Candle network.'),
+                            (contractAdress = CandleContractAddress),
+                            (BlockchainScan = CandleScan),
+                            (BeeFee = CandleFee),
+                            (isSupportNetwork = true);
+                        break;
+                    case 13381:
+                        console.log('This is the Phoenix network.'),
+                            (contractAdress = PhoenixContractAddress),
+                            (BlockchainScan = PhoenixScan),
+                            (BeeFee = PhoenixFee),
+                            (isSupportNetwork = true);
+                        break;
+                    case 43114:
+                            (contractAdress = AvalancheContractAddress),
+                            console.log("This is the Avalanche  network."),
+                            (BlockchainScan = AvalancheScan),
+                            (BeeFee = AvalancheFee),
+                            (isSupportNetwork = true);
+                        break;
+                    default:
+                        (document.getElementById('CurrentBlockchainImageID').src = 'img/1.png'),
+                            console.log('This is an unknown network.');
+                }
+                if (!isSupportNetwork) {
+                    $('#Tips').html('Current Blochchain Network is not support,Switch to Binance,Polygon or other Blockchain please.'),
+                        console.log('Not in range,Exit');
+                    throw new Error('Not in range,Exit....');
+                }
+                $("#SendEtherTitleID").html('Send ' + Coins[networkId].Symbol),
+                    (document.getElementById("CurrentBlockchainImageID").src = 'img/' + (networkId==5?1:networkId) + '.png'),
+                    $('#BlockchainNameID').html(Coins[networkId]["Name"]),
+                    (document.getElementById("SelectOptionID").value = networkId);
+                var userAddress = web3.currentProvider.selectedAddress,
+                    currentUserAddress = web3.currentProvider.selectedAddress,
+                    lastFourUserAddressIndex = web3.currentProvider.selectedAddress.length - 4,
+                    topSixUserAddress = currentUserAddress.substring(0, 6),
+                    lastFourUserAddress = currentUserAddress.substring(lastFourUserAddressIndex, web3.currentProvider.selectedAddress.length),
+                    currentAddress = topSixUserAddress + '...' + lastFourUserAddress;
+                $('#CurrentAddress').html(currentAddress),
+                    (myContract = await new web3.eth.Contract(
+                        SmartContractABI,
+                        contractAdress,
+                        { from: web3.currentProvider.selectedAddress }
+                    )),
+                    (ContractFee = await myContract.methods.fee().call()),
+                    console.log('Contract fee', ContractFee),
+                    console.log('BeeFee', web3.utils.toWei(BeeFee.toString())),
+                    (SendFee = (BigInt(ContractFee) + BigInt(web3.utils.toWei(BeeFee.toString()))).toString()),
+                    console.log("This SendFee:", SendFee),
+                    $('#SendFeeText').html("Fee:" + web3.utils.fromWei(SendFee));
+                var transactionCount = await web3.eth.getTransactionCount(PolygonContractAddress);
+                console.log("transactionCount:", transactionCount);
+                async function currentBlockchainImageID() {
+                    var currentNetworkId = await web3.eth.net.getId();
+                    console.log(currentNetworkId);
+                    switch (currentNetworkId) {
+                        case 1:
+                            console.log("This is mainnet");
+                            break;
+                        case 2:
+                            console.log('This is the deprecated Morden test network.');
+                            break;
+                        case 3:
+                            console.log('This is the ropsten test network.'),
+                                (contractAdress = RopstenAddress),
+                                (document.getElementById("SelectISend").value = 3);
+                            break;
+                        case 42:
+                            console.log('This is the kovan  network.'),
+                                (contractAdress = KovanAddress),
+                                (document.getElementById("SelectISend").value = 42);
+                            break;
+                        case 56:
+                            console.log('This is the BSC  network.'),
+                                (contractAdress = BinanceContractAddress);
+                            break;
+                        case 97:
+                            (contractAdress = BinanceTestContractAddress),
+                                console.log("This is the BSC test network.");
+                            break;
+                        case 108:
+                            console.log('This is the ThunderCore  network.');
+                            break;
+                        case 128:
+                            console.log("This is the huobi network.");
+                            break;
+                        case 137:
+                                (contractAdress = PolygonContractAddress),
+                                console.log("This is the Polygon  network.");
+                            break;
+                        case 250:
+                                (contractAdress = FantomContractAddress),
+                                console.log('This is the Fantom  network.');
+                            break;
+                        default:
+                            (document.getElementById('CurrentBlockchainImageID').src = 'img/1.png'),
+                                console.log("This is an unknown network.");
+                    }
+                    document.getElementById('CurrentBlockchainImageID').src = 'img/' + currentNetworkId + '.png';
+                }
+                function getBitcoinPrice() {
+                    fetch('https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&sparkline=false')
+                        .then((res) => res.json())
+                        .then((data) => {
+                            const market_data = data["market_data"];
+                            (getElement("BTCPrice").innerHTML = 'Bitcoin Current Price: $' + market_data.current_price.usd.toFixed(0)),
+                                (document.getElementById("price").value = market_data.current_price.usd.toFixed(0));
+                        });
+                }
+                function getElement(id) {
+                    return document.getElementById(id);
+                }
+                $('#MultiSendButton').click(function () {
+                    $('#Tips').html(""),
+                        $("#transactionHashLabel").html(""),
+                        $('#loader1').show(),
+                        SendMultiToken();
+                }),
+                console.log('Metamask detected!');
+            } else console.log("Metamask not detected"), $('#Tips').html("<div class='alert alert-warning' role='alert'> <a   href='https://metamask.io/'>Metamask not install,Click to Install Metamask First</a></div>");
+        });
+       
+        $('#fileUpload').change(function () {
+            $('#transactionHashLabel').html(""),
+                $('#Tips').html(""),
+                Upload();
+        }),
+        $('#li').hover(function () {
+            $("#nav li").removeClass("active"),
+                $(this).addClass("active");
+            },
+            function () {
+                $(this).removeClass("active"),
+                $('#nav li').first().addClass("active");
+            }
+        );
+
+    </script>
+</body>
+</html>
