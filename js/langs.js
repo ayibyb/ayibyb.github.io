@@ -1,6 +1,6 @@
 var arrLang = {
   'en': {
-      'SiteTitle': 'Bee Sender-ERC20 Token Multi Sender.Packer your multi transfer in one transaction and save your cost.',
+      'SiteTitle': 'ERC20 Token Multi Sender.Packer your multi transfer in one transaction and save your cost.',
       'Ethereum': 'Ethereum',
       'Binance': 'Binance',
       'Huobi': 'Huobi',
@@ -15,7 +15,7 @@ var arrLang = {
       'Send Token': 'Batch Send Token'
   },
   'zh': {
-      'SiteTitle': 'Bee Sender-同时发送代币和本币给多个地址',
+      'SiteTitle': '同时发送代币和本币给多个地址',
       'Ethereum': '以太坊链',
       'Binance': '币安链',
       'Huobi': '火币链',
@@ -32,7 +32,7 @@ var arrLang = {
   },
 
   'ru': {
-      'SiteTitle': 'Bee Sender-ERC20 Token Multi Sender. Упакуйте мультиперевод в одну транзакцию и сэкономьте на затратах.',
+      'SiteTitle': 'ERC20 Token Multi Sender. Упакуйте мультиперевод в одну транзакцию и сэкономьте на затратах.',
       'Ethereum': 'Ethereum',
       'Binance': 'Binance',
       'Huobi': 'Huobi',
@@ -49,7 +49,7 @@ var arrLang = {
 
 
   'kr': {
-      'SiteTitle': 'Bee Sender-ERC20 Token Multi Sender.Packer는 하나의 트랜잭션으로 다중 전송을 수행하고 비용을 절약합니다.',
+      'SiteTitle': '는 하나의 트랜잭션으로 다중 전송을 수행하고 비용을 절약합니다.',
       'Ethereum': 'Ethereum',
       'Binance': 'Binance',
       'Huobi': 'Huobi',
